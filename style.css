@@ -1,6 +1,8 @@
- body { background-color: #EEF4FF; }
+ body { background-color: #EEF4FF; height: 100%;min-height: 100vh;}
         .max-width { max-width: 1000px; margin: auto; }
         .head-box { max-width: 1000px; margin:15px auto; padding: 10px; }
         .head-box h2 { font-weight: bold; color: #002C5C; margin: 10px 0; font-size: 24px;}
         .job-box { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
         .count-box { padding: 10px; background-color: #F1F2F4; border-radius: 8px; font-weight: bold;}
+        .interview-btn{ background-color: transparent; color: green; border: 2px solid green;}
+        .rejected-btn{ background-color: transparent; color: red; border: 2px solid red;}

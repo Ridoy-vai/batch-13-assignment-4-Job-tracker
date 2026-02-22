@@ -13,17 +13,17 @@
     <div class="head-box max-width">
         <h2 class="bold">Job Application Tracker</h2>
         <div class="job-box">
-            <div class="count-box text-center">
+            <div class="count-box">
                 <p>All Jobs</p>
-                <p id="all-jobs-count">0</p>
+                <p id="all-jobs-count" class="bold">0</p>
             </div>
-            <div class="count-box text-center">
+            <div class="count-box">
                 <p>Interview</p>
-                <p id="interview-jobs-count">0</p>
+                <p id="interview-jobs-count" class="bold" style="color: green;">0</p>
             </div>
-            <div class="count-box text-center">
+            <div class="count-box">
                 <p>Rejected</p>
-                <p id="reject-jobs-count">0</p>
+                <p id="reject-jobs-count" class="bold" style="color: red;">0</p>
             </div>
         </div>
     </div>
@@ -33,7 +33,8 @@
     <div class="button-box max-width space-y-4 px-2">
         <div class="flex justify-between font-bold">
             <p>Available Jobs</p>
-            <p>Total Jobs: <span id="all-jobs-child">0</span></p>
+            <!-- <p class="hidden">Total Jobs: <span id="all-jobs-child">0</span></p> -->
+            <p class=""><span id="interview-And-Rejict-Count">0 </span> of <span id="all-jobs-child">0</span> Jobs</p>
         </div>
         <div class="flex justify-start gap-4">
             <button onclick="toggleStyle('job-find-All-button')" class="btn bg-black text-white" id="job-find-All-button">All</button>
@@ -111,7 +112,7 @@
             <div class="space-y-2">
                 <div class="flex justify-between">
                     <span>
-                        <h2 class="font-bold text-xl job_title">Microsoft</h2>
+                        <h2 class="font-bold text-xl job_title">dji</h2>
                         <p class="job_skill text-gray-500">Full Stack Engineer</p>
                     </span>
                     <i class="fa-solid fa-trash-can text-red-500 cursor-pointer text-xl delete-btn"></i>
@@ -130,7 +131,7 @@
             <div class="space-y-2">
                 <div class="flex justify-between">
                     <span>
-                        <h2 class="font-bold text-xl job_title">Microsoft</h2>
+                        <h2 class="font-bold text-xl job_title">open ai</h2>
                         <p class="job_skill text-gray-500">Full Stack Engineer</p>
                     </span>
                     <i class="fa-solid fa-trash-can text-red-500 cursor-pointer text-xl delete-btn"></i>
@@ -149,7 +150,7 @@
             <div class="space-y-2">
                 <div class="flex justify-between">
                     <span>
-                        <h2 class="font-bold text-xl job_title">Microsoft</h2>
+                        <h2 class="font-bold text-xl job_title">walton</h2>
                         <p class="job_skill text-gray-500">Full Stack Engineer</p>
                     </span>
                     <i class="fa-solid fa-trash-can text-red-500 cursor-pointer text-xl delete-btn"></i>
@@ -168,7 +169,7 @@
             <div class="space-y-2">
                 <div class="flex justify-between">
                     <span>
-                        <h2 class="font-bold text-xl job_title">Microsoft</h2>
+                        <h2 class="font-bold text-xl job_title">nasa</h2>
                         <p class="job_skill text-gray-500">Full Stack Engineer</p>
                     </span>
                     <i class="fa-solid fa-trash-can text-red-500 cursor-pointer text-xl delete-btn"></i>
@@ -187,7 +188,7 @@
             <div class="space-y-2">
                 <div class="flex justify-between">
                     <span>
-                        <h2 class="font-bold text-xl job_title">Microsoft</h2>
+                        <h2 class="font-bold text-xl job_title">nvda</h2>
                         <p class="job_skill text-gray-500">Full Stack Engineer</p>
                     </span>
                     <i class="fa-solid fa-trash-can text-red-500 cursor-pointer text-xl delete-btn"></i>
