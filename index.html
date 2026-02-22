@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <title>Job Tracker</title>
+</head>
+<body>
+    <div class="head-box max-width">
+        <h2 class="bold">Job Application Tracker</h2>
+        <div class="job-box">
+            <div class="count-box text-center">
+                <p>All Jobs</p>
+                <p id="all-jobs-count">0</p>
+            </div>
+            <div class="count-box text-center">
+                <p>Interview</p>
+                <p id="interview-jobs-count">0</p>
+            </div>
+            <div class="count-box text-center">
+                <p>Rejected</p>
+                <p id="reject-jobs-count">0</p>
+            </div>
+        </div>
+    </div>
+
+    <hr class="max-width my-4 border-gray-300">
+
+    <div class="button-box max-width space-y-4 px-2">
+        <div class="flex justify-between font-bold">
+            <p>Available Jobs</p>
+            <p>Total Jobs: <span id="all-jobs-child">0</span></p>
+        </div>
+        <div class="flex justify-start gap-4">
+            <button onclick="toggleStyle('job-find-All-button')" class="btn bg-black text-white" id="job-find-All-button">All</button>
+            <button onclick="toggleStyle('job-find-interview-button')" class="btn bg-gray-300 text-black" id="job-find-interview-button">Interview</button>
+            <button onclick="toggleStyle('job-find-reject-button')" class="btn bg-gray-300 text-black" id="job-find-reject-button">Rejected</button>
+        </div>
+    </div>
+
+    <!-- Filter Section (Hidden by default) -->
+    <section class="max-width hidden px-2" id="filter-section"></section>
+
+    <!-- Main Job Box -->
+    <main id="main-job-box" class="max-width px-2">
+        <!-- box 01 -->
+        <div class="job-card" style="margin-top: 20px; padding: 15px; background-color: #FFFFFF; border-radius: 8px; border: 1px solid #ddd;">
+            <div class="space-y-2">
+                <div class="flex justify-between">
+                    <span>
+                        <h2 class="font-bold text-xl job_title">Mobile First Corp</h2>
+                        <p class="job_skill text-gray-500">React Native Developer</p>
+                    </span>
+                    <i class="fa-solid fa-trash-can text-red-500 cursor-pointer text-xl delete-btn"></i>
+                </div>
+                <p class="job_salary font-semibold">Remote Full-time $130,000 - $175,000</p>
+                <button class="btn btn-sm status-btn">NOT APPLIED</button>
+                <p class="job_details text-gray-600">Build cross-platform mobile applications using React Native. Work on products used by millions.</p>
+                <div class="flex gap-4 mt-3">
+                    <button class="btn btn-primary interview-btn">INTERVIEW</button>
+                    <button class="btn btn-error rejected-btn text-white">REJECTED</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- box 02 -->
+        <div class="job-card" style="margin-top: 20px; padding: 15px; background-color: #FFFFFF; border-radius: 8px; border: 1px solid #ddd;">
+            <div class="space-y-2">
+                <div class="flex justify-between">
+                    <span>
+                        <h2 class="font-bold text-xl job_title">Google Inc</h2>
+                        <p class="job_skill text-gray-500">Frontend Developer</p>
+                    </span>
+                    <i class="fa-solid fa-trash-can text-red-500 cursor-pointer text-xl delete-btn"></i>
+                </div>
+                <p class="job_salary font-semibold">On-site $150,000 - $200,000</p>
+                <button class="btn btn-sm status-btn">NOT APPLIED</button>
+                <p class="job_details text-gray-600">Work on Google Search frontend using React and modern web technologies.</p>
+                <div class="flex gap-4 mt-3">
+                    <button class="btn btn-primary interview-btn">INTERVIEW</button>
+                    <button class="btn btn-error rejected-btn text-white">REJECTED</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- box 03 -->
+        <div class="job-card" style="margin-top: 20px; padding: 15px; background-color: #FFFFFF; border-radius: 8px; border: 1px solid #ddd;">
+            <div class="space-y-2">
+                <div class="flex justify-between">
+                    <span>
+                        <h2 class="font-bold text-xl job_title">Microsoft</h2>
+                        <p class="job_skill text-gray-500">Full Stack Engineer</p>
+                    </span>
+                    <i class="fa-solid fa-trash-can text-red-500 cursor-pointer text-xl delete-btn"></i>
+                </div>
+                <p class="job_salary font-semibold">Hybrid $140,000 - $180,000</p>
+                <button class="btn btn-sm status-btn">NOT APPLIED</button>
+                <p class="job_details text-gray-600">Develop highly scalable applications using Node.js and React for enterprise clients.</p>
+                <div class="flex gap-4 mt-3">
+                    <button class="btn btn-primary interview-btn">INTERVIEW</button>
+                    <button class="btn btn-error rejected-btn text-white">REJECTED</button>
+                </div>
+            </div>
+        </div>
+        <!-- box 03 -->
+        <div class="job-card" style="margin-top: 20px; padding: 15px; background-color: #FFFFFF; border-radius: 8px; border: 1px solid #ddd;">
+            <div class="space-y-2">
+                <div class="flex justify-between">
+                    <span>
+                        <h2 class="font-bold text-xl job_title">Microsoft</h2>
+                        <p class="job_skill text-gray-500">Full Stack Engineer</p>
+                    </span>
+                    <i class="fa-solid fa-trash-can text-red-500 cursor-pointer text-xl delete-btn"></i>
+                </div>
+                <p class="job_salary font-semibold">Hybrid $140,000 - $180,000</p>
+                <button class="btn btn-sm status-btn">NOT APPLIED</button>
+                <p class="job_details text-gray-600">Develop highly scalable applications using Node.js and React for enterprise clients.</p>
+                <div class="flex gap-4 mt-3">
+                    <button class="btn btn-primary interview-btn">INTERVIEW</button>
+                    <button class="btn btn-error rejected-btn text-white">REJECTED</button>
+                </div>
+            </div>
+        </div>
+        <!-- box 03 -->
+        <div class="job-card" style="margin-top: 20px; padding: 15px; background-color: #FFFFFF; border-radius: 8px; border: 1px solid #ddd;">
+            <div class="space-y-2">
+                <div class="flex justify-between">
+                    <span>
+                        <h2 class="font-bold text-xl job_title">Microsoft</h2>
+                        <p class="job_skill text-gray-500">Full Stack Engineer</p>
+                    </span>
+                    <i class="fa-solid fa-trash-can text-red-500 cursor-pointer text-xl delete-btn"></i>
+                </div>
+                <p class="job_salary font-semibold">Hybrid $140,000 - $180,000</p>
+                <button class="btn btn-sm status-btn">NOT APPLIED</button>
+                <p class="job_details text-gray-600">Develop highly scalable applications using Node.js and React for enterprise clients.</p>
+                <div class="flex gap-4 mt-3">
+                    <button class="btn btn-primary interview-btn">INTERVIEW</button>
+                    <button class="btn btn-error rejected-btn text-white">REJECTED</button>
+                </div>
+            </div>
+        </div>
+        <!-- box 03 -->
+        <div class="job-card" style="margin-top: 20px; padding: 15px; background-color: #FFFFFF; border-radius: 8px; border: 1px solid #ddd;">
+            <div class="space-y-2">
+                <div class="flex justify-between">
+                    <span>
+                        <h2 class="font-bold text-xl job_title">Microsoft</h2>
+                        <p class="job_skill text-gray-500">Full Stack Engineer</p>
+                    </span>
+                    <i class="fa-solid fa-trash-can text-red-500 cursor-pointer text-xl delete-btn"></i>
+                </div>
+                <p class="job_salary font-semibold">Hybrid $140,000 - $180,000</p>
+                <button class="btn btn-sm status-btn">NOT APPLIED</button>
+                <p class="job_details text-gray-600">Develop highly scalable applications using Node.js and React for enterprise clients.</p>
+                <div class="flex gap-4 mt-3">
+                    <button class="btn btn-primary interview-btn">INTERVIEW</button>
+                    <button class="btn btn-error rejected-btn text-white">REJECTED</button>
+                </div>
+            </div>
+        </div>
+        <!-- box 03 -->
+        <div class="job-card" style="margin-top: 20px; padding: 15px; background-color: #FFFFFF; border-radius: 8px; border: 1px solid #ddd;">
+            <div class="space-y-2">
+                <div class="flex justify-between">
+                    <span>
+                        <h2 class="font-bold text-xl job_title">Microsoft</h2>
+                        <p class="job_skill text-gray-500">Full Stack Engineer</p>
+                    </span>
+                    <i class="fa-solid fa-trash-can text-red-500 cursor-pointer text-xl delete-btn"></i>
+                </div>
+                <p class="job_salary font-semibold">Hybrid $140,000 - $180,000</p>
+                <button class="btn btn-sm status-btn">NOT APPLIED</button>
+                <p class="job_details text-gray-600">Develop highly scalable applications using Node.js and React for enterprise clients.</p>
+                <div class="flex gap-4 mt-3">
+                    <button class="btn btn-primary interview-btn">INTERVIEW</button>
+                    <button class="btn btn-error rejected-btn text-white">REJECTED</button>
+                </div>
+            </div>
+        </div>
+        <!-- box 03 -->
+        <div class="job-card" style="margin-top: 20px; padding: 15px; background-color: #FFFFFF; border-radius: 8px; border: 1px solid #ddd;">
+            <div class="space-y-2">
+                <div class="flex justify-between">
+                    <span>
+                        <h2 class="font-bold text-xl job_title">Microsoft</h2>
+                        <p class="job_skill text-gray-500">Full Stack Engineer</p>
+                    </span>
+                    <i class="fa-solid fa-trash-can text-red-500 cursor-pointer text-xl delete-btn"></i>
+                </div>
+                <p class="job_salary font-semibold">Hybrid $140,000 - $180,000</p>
+                <button class="btn btn-sm status-btn">NOT APPLIED</button>
+                <p class="job_details text-gray-600">Develop highly scalable applications using Node.js and React for enterprise clients.</p>
+                <div class="flex gap-4 mt-3">
+                    <button class="btn btn-primary interview-btn">INTERVIEW</button>
+                    <button class="btn btn-error rejected-btn text-white">REJECTED</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
