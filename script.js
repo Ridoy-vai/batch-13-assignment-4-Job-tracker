@@ -1,7 +1,7 @@
 let interViewList = [];
 let rejectsList = [];
 
-// Elements
+//All Elements ID Connect
 let allJobsCount = document.getElementById("all-jobs-count");
 let interViewJobsCount = document.getElementById("interview-jobs-count");
 let rejectJobsCount = document.getElementById("reject-jobs-count");
@@ -10,39 +10,38 @@ let filterSection = document.getElementById("filter-section");
 let interviewAndRejictCount = document.getElementById("interview-And-Rejict-Count");
 console.log(interviewAndRejictCount.innerText)
 
-// Buttons
+// All Buttons ID Connect
 let allJobButton = document.getElementById("job-find-All-button");
 let allInterviewButton = document.getElementById("job-find-interview-button");
 let allRejectButton = document.getElementById("job-find-reject-button");
 
-// --- ফাংশনগুলো উপরে এবং গ্লোবাল স্কোপে নিয়ে আসা হলো ---
-
+// Count Funtion 
 function updateCounts() {
     allJobsCount.innerText = mainBox.children.length;
     interViewJobsCount.innerText = interViewList.length;
     rejectJobsCount.innerText = rejectsList.length;
 }
-
+// All Job Inertext Change
 function totalJOb() {
     document.getElementById("all-jobs-child").innerText = mainBox.children.length;
     interviewAndRejictCount.innerText = mainBox.children.length;
 }
 
-// ইন্টারভিউ লিস্টের কাউন্ট আপডেট
+// Interview List Count Update
 function jobFindInterviewButton() {
     if (interviewAndRejictCount) {
         interviewAndRejictCount.innerText = interViewList.length;
     }
 }
 
-// রিজেক্ট লিস্টের কাউন্ট আপডেট (বানান ঠিক করা হয়েছে)
+// Rejict List Count Update
 function jobFindRejectButton() {
     if (interviewAndRejictCount) {
         interviewAndRejictCount.innerText = rejectsList.length;
     }
 }
 
-// বর্তমানে কোন ট্যাব খোলা আছে সেই অনুযায়ী কাউন্ট আপডেট করার জন্য একটি কমন ফাংশন
+// Open Tab Find And Count Update
 function updateActiveTabCount() {
     if (allInterviewButton.classList.contains('bg-black')) {
         jobFindInterviewButton();
@@ -57,7 +56,7 @@ function updateActiveTabCount() {
 updateCounts();
 totalJOb();
 
-// Tab Toggle Logic
+// Tab Toggle Some Style Change
 function toggleStyle(id) {
     allJobButton.className = "btn bg-gray-300 text-black";
     allInterviewButton.className = "btn bg-gray-300 text-black";
@@ -83,7 +82,7 @@ function toggleStyle(id) {
     }
 }
 
-// Main UI Update function
+// Main Update function UI
 function updateMainBoxUI(jobName, status) {
     const titles = document.querySelectorAll('#main-job-box .job_title');
     titles.forEach(title => {
@@ -134,6 +133,7 @@ document.addEventListener('click', function (event) {
         return;
     }
 
+    // Object Creat
     const jobSkill = parentNode.querySelector('.job_skill').innerText;
     const jobSalary = parentNode.querySelector('.job_salary').innerText;
     const jobDetails = parentNode.querySelector('.job_details').innerText;
@@ -161,7 +161,7 @@ document.addEventListener('click', function (event) {
     updateActiveTabCount(); 
 });
 
-
+// Blank Page Loadded
 function renderApprove() {
     filterSection.innerHTML = ""; 
     if(interViewList.length === 0){
@@ -176,7 +176,8 @@ function renderApprove() {
         </div>`;
         return;
     }
-    
+
+    // Dynamick Data Loaded
     interViewList.forEach(interview => {
         let div = document.createElement('div');
         div.innerHTML = `<div class="job-card" style="margin-top: 20px; padding: 15px; background-color: #E8F5E9; border-radius: 8px; border: 1px solid #4CAF50;">
@@ -201,6 +202,7 @@ function renderApprove() {
     });
 }
 
+// Blank Page Loaded
 function renderRejected() {
     filterSection.innerHTML = ""; 
     if(rejectsList.length === 0){
@@ -215,6 +217,8 @@ function renderRejected() {
         </div>`;
         return;
     }
+
+    // Dynamic Data Loaded
     rejectsList.forEach(reject => {
         let div = document.createElement('div');
         div.innerHTML = `<div class="job-card" style="margin-top: 20px; padding: 15px; background-color: #FFEBEE; border-radius: 8px; border: 1px solid #F44336;">
