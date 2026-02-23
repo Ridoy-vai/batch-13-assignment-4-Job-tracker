@@ -24,7 +24,6 @@ function updateCounts() {
 // All Job Inertext Change
 function totalJOb() {
     document.getElementById("all-jobs-child").innerText = mainBox.children.length;
-    // interviewAndRejictCount.innerText = mainBox.children.length + " of ";
 }
 
 // Interview List Count Update
@@ -121,7 +120,6 @@ document.addEventListener('click', function (event) {
     const jobName = parentNode.querySelector('.job_title').innerText;
 
     if (isDeleteBtn) {
-        if (confirm("Are you sure you want to delete this job?")) {
             interViewList = interViewList.filter(item => item.jobName !== jobName);
             rejectsList = rejectsList.filter(item => item.jobName !== jobName);
 
@@ -136,7 +134,6 @@ document.addEventListener('click', function (event) {
                 else if (allRejectButton.classList.contains('bg-black')) renderRejected();
             }
             updateActiveTabCount(); 
-        }
         return;
     }
 
@@ -169,6 +166,9 @@ document.addEventListener('click', function (event) {
 
     updateActiveTabCount(); 
 });
+
+
+
 
 // Blank Interview Page Loadded
 function renderApprove() {
@@ -209,7 +209,7 @@ function renderApprove() {
                         <h2 class="font-bold text-xl text-green-700 job_title">${interview.jobName}</h2>
                         <p class="job_skill text-gray-600">${interview.jobSkill}</p>
                     </span>
-                    <i class="fa-solid fa-trash-can text-red-500 cursor-pointer text-xl delete-btn"></i>
+                    <i class="fa-solid fa-trash-can text-red-500 cursor-pointer text-xl delete-btn" onclick="my_modal_1.showModal()"></i>
                 </div>
                 <p class="job_salary font-semibold">${interview.jobSalary}</p>
                 <button class="btn btn-sm status-btn bg-green-500 text-white border-none">INTERVIEWING</button>
@@ -260,7 +260,7 @@ function renderRejected() {
                         <h2 class="font-bold text-xl text-red-700 job_title">${reject.jobName}</h2>
                         <p class="job_skill text-gray-600">${reject.jobSkill}</p>
                     </span>
-                    <i class="fa-solid fa-trash-can text-red-500 cursor-pointer text-xl delete-btn"></i>
+                    <i class="fa-solid fa-trash-can text-red-500 cursor-pointer text-xl delete-btn" onclick="my_modal_1.showModal()"></i>
                 </div>
                 <p class="job_salary font-semibold">${reject.jobSalary}</p>
                 <button class="btn btn-sm status-btn bg-red-500 text-white border-none">REJECTED</button>
@@ -274,3 +274,4 @@ function renderRejected() {
         filterSection.appendChild(div);
     });
 }
+

@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
 
     <!-- Css Link Conect -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="stylesheet/style.css">
     <title>Job Tracker</title>
 </head>
 <body>
@@ -43,7 +43,6 @@
     <div class="button-box max-width space-y-4 px-2">
         <div class="flex justify-between font-bold">
             <p>Available Jobs</p>
-            <!-- <p class="hidden">Total Jobs: <span id="all-jobs-child">0</span></p> -->
             <p class=""><span id="interview-And-Rejict-Count"></span><span id="all-jobs-child">0</span> Jobs</p>
         </div>
         <div class="flex justify-start gap-4">
@@ -56,6 +55,18 @@
     <!-- Filter Section (Hidden by default) -->
     <section class="max-width hidden px-2" id="filter-section"></section>
 
+    <!-- Delete Button Modal Windo Pop Up -->
+   <dialog id="my_modal_1" class="modal">
+        <div class="modal-box">
+            <h3 class="text-lg font-bold">Job deleted successfully!</h3>
+            <p class="py-4">Press ESC or click Close button to close. </p>
+            <div class="modal-action">
+                <button class="btn" onclick="my_modal_1.close()">Close</button>
+            </div>
+        </div>
+    </dialog>
+
+
     <!-- Main Part And Job Box -->
     <main id="main-job-box" class="max-width px-2">
         <!-- Job box 01 -->
@@ -66,7 +77,7 @@
                         <h2 class="font-bold text-xl job_title">NASA</h2>
                         <p class="job_skill text-gray-500">Aerospace Engineer</p>
                     </span>
-                    <i class="fa-solid fa-trash-can text-red-500 cursor-pointer text-xl delete-btn"></i>
+                    <i class="fa-solid fa-trash-can text-red-500 cursor-pointer text-xl delete-btn" onclick="my_modal_1.showModal()"></i>
                 </div>
                 <p class="job_salary font-semibold">Salary: ≈ $75,000 – $165,000/yr</p>
                 <button class="btn btn-sm status-btn">NOT APPLIED</button>
@@ -86,7 +97,7 @@
                         <h2 class="font-bold text-xl job_title">Google</h2>
                         <p class="job_skill text-gray-500">Frontend Developer</p>
                     </span>
-                    <i class="fa-solid fa-trash-can text-red-500 cursor-pointer text-xl delete-btn"></i>
+                    <i class="fa-solid fa-trash-can text-red-500 cursor-pointer text-xl delete-btn" onclick="my_modal_1.showModal()"></i>
                 </div>
                 <p class="job_salary font-semibold">On-site $150,000 - $200,000</p>
                 <button class="btn btn-sm status-btn">NOT APPLIED</button>
@@ -106,7 +117,7 @@
                         <h2 class="font-bold text-xl job_title">Microsoft</h2>
                         <p class="job_skill text-gray-500">Full Stack Engineer</p>
                     </span>
-                    <i class="fa-solid fa-trash-can text-red-500 cursor-pointer text-xl delete-btn"></i>
+                    <i class="fa-solid fa-trash-can text-red-500 cursor-pointer text-xl delete-btn" onclick="my_modal_1.showModal()"></i>
                 </div>
                 <p class="job_salary font-semibold">Hybrid $140,000 - $180,000</p>
                 <button class="btn btn-sm status-btn">NOT APPLIED</button>
@@ -126,7 +137,7 @@
                         <h2 class="font-bold text-xl job_title">DJI</h2>
                         <p class="job_skill text-gray-500">Research & Development (R&D)</p>
                     </span>
-                    <i class="fa-solid fa-trash-can text-red-500 cursor-pointer text-xl delete-btn"></i>
+                    <i class="fa-solid fa-trash-can text-red-500 cursor-pointer text-xl delete-btn" onclick="my_modal_1.showModal()"></i>
                 </div>
                 <p class="job_salary font-semibold">Annual: ≈ $110,000 – $140,000+</p>
                 <button class="btn btn-sm status-btn">NOT APPLIED</button>
@@ -146,7 +157,7 @@
                         <h2 class="font-bold text-xl job_title">OpenAI</h2>
                         <p class="job_skill text-gray-500">Full Stack / Software Engineer</p>
                     </span>
-                    <i class="fa-solid fa-trash-can text-red-500 cursor-pointer text-xl delete-btn"></i>
+                    <i class="fa-solid fa-trash-can text-red-500 cursor-pointer text-xl delete-btn" onclick="my_modal_1.showModal()"></i>
                 </div>
                 <p class="job_salary font-semibold">Salary: $185,000 – $385,000/yr</p>
                 <button class="btn btn-sm status-btn">NOT APPLIED</button>
@@ -166,7 +177,7 @@
                         <h2 class="font-bold text-xl job_title">NVIDIA</h2>
                         <p class="job_skill text-gray-500">Data Scientist / Analyst</p>
                     </span>
-                    <i class="fa-solid fa-trash-can text-red-500 cursor-pointer text-xl delete-btn"></i>
+                    <i class="fa-solid fa-trash-can text-red-500 cursor-pointer text-xl delete-btn" onclick="my_modal_1.showModal()"></i>
                 </div>
                 <p class="job_salary font-semibold">Salary: ~ $110,000 – $150,000/yr</p>
                 <button class="btn btn-sm status-btn">NOT APPLIED</button>
@@ -186,7 +197,7 @@
                         <h2 class="font-bold text-xl job_title">SpaceX</h2>
                         <p class="job_skill text-gray-500">Mechanical Engineer (Starlink Components)</p>
                     </span>
-                    <i class="fa-solid fa-trash-can text-red-500 cursor-pointer text-xl delete-btn"></i>
+                    <i class="fa-solid fa-trash-can text-red-500 cursor-pointer text-xl delete-btn" onclick="my_modal_1.showModal()"></i>
                 </div>
                 <p class="job_salary font-semibold">Remote Full-time $130,000 - $175,000</p>
                 <button class="btn btn-sm status-btn">NOT APPLIED</button>
@@ -206,7 +217,7 @@
                         <h2 class="font-bold text-xl job_title">Tesla</h2>
                         <p class="job_skill text-gray-500">Project / Product Manager</p>
                     </span>
-                    <i class="fa-solid fa-trash-can text-red-500 cursor-pointer text-xl delete-btn"></i>
+                    <i class="fa-solid fa-trash-can text-red-500 cursor-pointer text-xl delete-btn" onclick="my_modal_1.showModal()"></i>
                 </div>
                 <p class="job_salary font-semibold">Salary: ≈ $100,000 – $160,000/yr</p>
                 <button class="btn btn-sm status-btn">NOT APPLIED</button>
@@ -220,6 +231,6 @@
     </main>
 
     <!-- Java Script Page Connect -->
-    <script src="script.js"></script>
+    <script src="script/script.js"></script>
 </body>
 </html>
