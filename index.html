@@ -3,13 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Daisy Ui And Tailwind Css Link -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Font Waesome Link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+
+    <!-- Css Link Conect -->
     <link rel="stylesheet" href="style.css">
     <title>Job Tracker</title>
 </head>
 <body>
+
+    <!-- Header Part -->
     <div class="head-box max-width">
         <h2 class="bold">Job Application Tracker</h2>
         <div class="job-box">
@@ -28,13 +36,15 @@
         </div>
     </div>
 
+    <!-- Header And Button Break -->
     <hr class="max-width my-4 border-gray-300">
 
+    <!-- Button Part -->
     <div class="button-box max-width space-y-4 px-2">
         <div class="flex justify-between font-bold">
             <p>Available Jobs</p>
             <!-- <p class="hidden">Total Jobs: <span id="all-jobs-child">0</span></p> -->
-            <p class=""><span id="interview-And-Rejict-Count">0 </span> of <span id="all-jobs-child">0</span> Jobs</p>
+            <p class=""><span id="interview-And-Rejict-Count"></span><span id="all-jobs-child">0</span> Jobs</p>
         </div>
         <div class="flex justify-start gap-4">
             <button onclick="toggleStyle('job-find-All-button')" class="btn bg-black text-white" id="job-find-All-button">All</button>
@@ -46,21 +56,21 @@
     <!-- Filter Section (Hidden by default) -->
     <section class="max-width hidden px-2" id="filter-section"></section>
 
-    <!-- Main Job Box -->
+    <!-- Main Part And Job Box -->
     <main id="main-job-box" class="max-width px-2">
-        <!-- box 01 -->
+        <!-- Job box 01 -->
         <div class="job-card" style="margin-top: 20px; padding: 15px; background-color: #FFFFFF; border-radius: 8px; border: 1px solid #ddd;">
             <div class="space-y-2">
                 <div class="flex justify-between">
                     <span>
-                        <h2 class="font-bold text-xl job_title">Mobile First Corp</h2>
-                        <p class="job_skill text-gray-500">React Native Developer</p>
+                        <h2 class="font-bold text-xl job_title">NASA</h2>
+                        <p class="job_skill text-gray-500">Aerospace Engineer</p>
                     </span>
                     <i class="fa-solid fa-trash-can text-red-500 cursor-pointer text-xl delete-btn"></i>
                 </div>
-                <p class="job_salary font-semibold">Remote Full-time $130,000 - $175,000</p>
+                <p class="job_salary font-semibold">Salary: ≈ $75,000 – $165,000/yr</p>
                 <button class="btn btn-sm status-btn">NOT APPLIED</button>
-                <p class="job_details text-gray-600">Build cross-platform mobile applications using React Native. Work on products used by millions.</p>
+                <p class="job_details text-gray-600">Mechanical, or Electrical degree with strong engineering and problem-solving skills</p>
                 <div class="flex gap-4 mt-3">
                     <button class="btn btn-primary interview-btn">INTERVIEW</button>
                     <button class="btn btn-error rejected-btn text-white">REJECTED</button>
@@ -68,12 +78,12 @@
             </div>
         </div>
 
-        <!-- box 02 -->
+        <!-- Job box 02 -->
         <div class="job-card" style="margin-top: 20px; padding: 15px; background-color: #FFFFFF; border-radius: 8px; border: 1px solid #ddd;">
             <div class="space-y-2">
                 <div class="flex justify-between">
                     <span>
-                        <h2 class="font-bold text-xl job_title">Google Inc</h2>
+                        <h2 class="font-bold text-xl job_title">Google</h2>
                         <p class="job_skill text-gray-500">Frontend Developer</p>
                     </span>
                     <i class="fa-solid fa-trash-can text-red-500 cursor-pointer text-xl delete-btn"></i>
@@ -88,7 +98,7 @@
             </div>
         </div>
         
-        <!-- box 03 -->
+        <!-- Job box 03 -->
         <div class="job-card" style="margin-top: 20px; padding: 15px; background-color: #FFFFFF; border-radius: 8px; border: 1px solid #ddd;">
             <div class="space-y-2">
                 <div class="flex justify-between">
@@ -107,95 +117,100 @@
                 </div>
             </div>
         </div>
-        <!-- box 03 -->
+
+        <!-- Job box 04 -->
         <div class="job-card" style="margin-top: 20px; padding: 15px; background-color: #FFFFFF; border-radius: 8px; border: 1px solid #ddd;">
             <div class="space-y-2">
                 <div class="flex justify-between">
                     <span>
-                        <h2 class="font-bold text-xl job_title">dji</h2>
-                        <p class="job_skill text-gray-500">Full Stack Engineer</p>
+                        <h2 class="font-bold text-xl job_title">DJI</h2>
+                        <p class="job_skill text-gray-500">Research & Development (R&D)</p>
                     </span>
                     <i class="fa-solid fa-trash-can text-red-500 cursor-pointer text-xl delete-btn"></i>
                 </div>
-                <p class="job_salary font-semibold">Hybrid $140,000 - $180,000</p>
+                <p class="job_salary font-semibold">Annual: ≈ $110,000 – $140,000+</p>
                 <button class="btn btn-sm status-btn">NOT APPLIED</button>
-                <p class="job_details text-gray-600">Develop highly scalable applications using Node.js and React for enterprise clients.</p>
+                <p class="job_details text-gray-600">CS/Electronics degree, programming, AI/ML, embedded systems, problem-solving.</p>
                 <div class="flex gap-4 mt-3">
                     <button class="btn btn-primary interview-btn">INTERVIEW</button>
                     <button class="btn btn-error rejected-btn text-white">REJECTED</button>
                 </div>
             </div>
         </div>
-        <!-- box 03 -->
+
+        <!-- Job box 05 -->
         <div class="job-card" style="margin-top: 20px; padding: 15px; background-color: #FFFFFF; border-radius: 8px; border: 1px solid #ddd;">
             <div class="space-y-2">
                 <div class="flex justify-between">
                     <span>
-                        <h2 class="font-bold text-xl job_title">open ai</h2>
-                        <p class="job_skill text-gray-500">Full Stack Engineer</p>
+                        <h2 class="font-bold text-xl job_title">OpenAI</h2>
+                        <p class="job_skill text-gray-500">Full Stack / Software Engineer</p>
                     </span>
                     <i class="fa-solid fa-trash-can text-red-500 cursor-pointer text-xl delete-btn"></i>
                 </div>
-                <p class="job_salary font-semibold">Hybrid $140,000 - $180,000</p>
+                <p class="job_salary font-semibold">Salary: $185,000 – $385,000/yr</p>
                 <button class="btn btn-sm status-btn">NOT APPLIED</button>
-                <p class="job_details text-gray-600">Develop highly scalable applications using Node.js and React for enterprise clients.</p>
+                <p class="job_details text-gray-600">technical roles like software engineering, AI research, security, and infrastructure are high‑paying and emphasize AI and cloud experience.</p>
                 <div class="flex gap-4 mt-3">
                     <button class="btn btn-primary interview-btn">INTERVIEW</button>
                     <button class="btn btn-error rejected-btn text-white">REJECTED</button>
                 </div>
             </div>
         </div>
-        <!-- box 03 -->
+
+        <!-- Job box 06 -->
         <div class="job-card" style="margin-top: 20px; padding: 15px; background-color: #FFFFFF; border-radius: 8px; border: 1px solid #ddd;">
             <div class="space-y-2">
                 <div class="flex justify-between">
                     <span>
-                        <h2 class="font-bold text-xl job_title">walton</h2>
-                        <p class="job_skill text-gray-500">Full Stack Engineer</p>
+                        <h2 class="font-bold text-xl job_title">NVIDIA</h2>
+                        <p class="job_skill text-gray-500">Data Scientist / Analyst</p>
                     </span>
                     <i class="fa-solid fa-trash-can text-red-500 cursor-pointer text-xl delete-btn"></i>
                 </div>
-                <p class="job_salary font-semibold">Hybrid $140,000 - $180,000</p>
+                <p class="job_salary font-semibold">Salary: ~ $110,000 – $150,000/yr</p>
                 <button class="btn btn-sm status-btn">NOT APPLIED</button>
-                <p class="job_details text-gray-600">Develop highly scalable applications using Node.js and React for enterprise clients.</p>
+                <p class="job_details text-gray-600">Data Science, CS, or Math degree with Python, SAS, analytics, problem-solving skills</p>
                 <div class="flex gap-4 mt-3">
                     <button class="btn btn-primary interview-btn">INTERVIEW</button>
                     <button class="btn btn-error rejected-btn text-white">REJECTED</button>
                 </div>
             </div>
         </div>
-        <!-- box 03 -->
+
+        <!-- Job box 07 -->
         <div class="job-card" style="margin-top: 20px; padding: 15px; background-color: #FFFFFF; border-radius: 8px; border: 1px solid #ddd;">
             <div class="space-y-2">
                 <div class="flex justify-between">
                     <span>
-                        <h2 class="font-bold text-xl job_title">nasa</h2>
-                        <p class="job_skill text-gray-500">Full Stack Engineer</p>
+                        <h2 class="font-bold text-xl job_title">SpaceX</h2>
+                        <p class="job_skill text-gray-500">Mechanical Engineer (Starlink Components)</p>
                     </span>
                     <i class="fa-solid fa-trash-can text-red-500 cursor-pointer text-xl delete-btn"></i>
                 </div>
-                <p class="job_salary font-semibold">Hybrid $140,000 - $180,000</p>
+                <p class="job_salary font-semibold">Remote Full-time $130,000 - $175,000</p>
                 <button class="btn btn-sm status-btn">NOT APPLIED</button>
-                <p class="job_details text-gray-600">Develop highly scalable applications using Node.js and React for enterprise clients.</p>
+                <p class="job_details text-gray-600">Mechanical/Engineering degree, design skills, teamwork, adaptability in fast pace.</p>
                 <div class="flex gap-4 mt-3">
                     <button class="btn btn-primary interview-btn">INTERVIEW</button>
                     <button class="btn btn-error rejected-btn text-white">REJECTED</button>
                 </div>
             </div>
         </div>
-        <!-- box 03 -->
+
+        <!-- Job box 08 -->
         <div class="job-card" style="margin-top: 20px; padding: 15px; background-color: #FFFFFF; border-radius: 8px; border: 1px solid #ddd;">
             <div class="space-y-2">
                 <div class="flex justify-between">
                     <span>
-                        <h2 class="font-bold text-xl job_title">nvda</h2>
-                        <p class="job_skill text-gray-500">Full Stack Engineer</p>
+                        <h2 class="font-bold text-xl job_title">Tesla</h2>
+                        <p class="job_skill text-gray-500">Project / Product Manager</p>
                     </span>
                     <i class="fa-solid fa-trash-can text-red-500 cursor-pointer text-xl delete-btn"></i>
                 </div>
-                <p class="job_salary font-semibold">Hybrid $140,000 - $180,000</p>
+                <p class="job_salary font-semibold">Salary: ≈ $100,000 – $160,000/yr</p>
                 <button class="btn btn-sm status-btn">NOT APPLIED</button>
-                <p class="job_details text-gray-600">Develop highly scalable applications using Node.js and React for enterprise clients.</p>
+                <p class="job_details text-gray-600">Engineering/Management degree, leadership, planning, coordination, communication, problem-solving skills.</p>
                 <div class="flex gap-4 mt-3">
                     <button class="btn btn-primary interview-btn">INTERVIEW</button>
                     <button class="btn btn-error rejected-btn text-white">REJECTED</button>
@@ -204,6 +219,7 @@
         </div>
     </main>
 
+    <!-- Java Script Page Connect -->
     <script src="script.js"></script>
 </body>
 </html>

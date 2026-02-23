@@ -4,5 +4,7 @@
         .head-box h2 { font-weight: bold; color: #002C5C; margin: 10px 0; font-size: 24px;}
         .job-box { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
         .count-box { padding: 10px; background-color: #F1F2F4; border-radius: 8px; font-weight: bold;}
-        .interview-btn{ background-color: transparent; color: green; border: 2px solid green;}
-        .rejected-btn{ background-color: transparent; color: red; border: 2px solid red;}
+        .interview-btn{ background-color: transparent; color: green; border: 2px solid green; transition: all 1s;}
+        .rejected-btn{ background-color: transparent; color: red; border: 2px solid red; transition: all 1s;}
+        .interview-btn:hover{background-color: rgba(0, 128, 0, 0.686); color: white;}
+        .rejected-btn:hover{background-color: rgba(255, 0, 0, 0.663); color: white;}
