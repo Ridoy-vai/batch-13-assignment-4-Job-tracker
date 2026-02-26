@@ -1,19 +1,19 @@
-let interViewList = [];
-let rejectsList = [];
+const interViewList = [];
+const rejectsList = [];
 
 //All Elements ID Connect
-let allJobsCount = document.getElementById("all-jobs-count");
-let interViewJobsCount = document.getElementById("interview-jobs-count");
-let rejectJobsCount = document.getElementById("reject-jobs-count");
-let mainBox = document.getElementById("main-job-box");
-let filterSection = document.getElementById("filter-section");
-let interviewAndRejictCount = document.getElementById("interview-And-Rejict-Count");
+const allJobsCount = document.getElementById("all-jobs-count");
+const interViewJobsCount = document.getElementById("interview-jobs-count");
+const rejectJobsCount = document.getElementById("reject-jobs-count");
+const mainBox = document.getElementById("main-job-box");
+const filterSection = document.getElementById("filter-section");
+const interviewAndRejictCount = document.getElementById("interview-And-Rejict-Count");
 // console.log(interViewJobsCount.innerText)
 
 // All Buttons ID Connect
-let allJobButton = document.getElementById("job-find-All-button");
-let allInterviewButton = document.getElementById("job-find-interview-button");
-let allRejectButton = document.getElementById("job-find-reject-button");
+const allJobButton = document.getElementById("job-find-All-button");
+const allInterviewButton = document.getElementById("job-find-interview-button");
+const allRejectButton = document.getElementById("job-find-reject-button");
 
 // Count Funtion 
 function updateCounts() {
